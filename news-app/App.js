@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, Text, Image, View } from "react-native";
 
 export default function App() {
   return (
@@ -14,7 +14,10 @@ export default function App() {
           />
         </View>
         <View style={styles.rightContainer}>
-          
+          <Text numberOfLines={3} style={styles.text}>
+            ReactNews ReactNews ReactNews ReactNews
+          </Text>
+          <Text style={styles.subText}>仮文言</Text>
         </View>
       </View>
       <StatusBar style="auto" />
@@ -32,15 +35,22 @@ const styles = StyleSheet.create({
   itemContainer: {
     height: 100,
     width: "100%",
-    backgroundColor: "red",
+    backgroundColor: "white",
     flexDirection: "row",
   },
   leftContainer: {
     width: 100,
-    backgroundColor: "green",
   },
   rightContainer: {
     flex: 1,
-    backgroundColor: "blue",
+    padding: 10,
+    justifyContent: "space-between"
+  },
+  text: {
+    fontSize: 16,
+  },
+  subText: {
+    fontSize: 12,
+    color: "gray",
   },
 });
