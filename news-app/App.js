@@ -5,7 +5,7 @@ import { ListItem } from "./components/ListItem";
 import Constants from "expo-constants";
 import axios from "axios";
 
-const URL = `https://newsapi.org/v2/top-headlines?country=jp&category=business&apiKey=${Constants.manifest.extra.newsApiKey}`;
+const URL = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
 export default function App() {
   const [articles, setArticles] = useState([]);
