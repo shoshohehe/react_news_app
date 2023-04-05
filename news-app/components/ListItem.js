@@ -17,7 +17,7 @@ export const ListItem = (props) => {
         <Image
           style={{ width: 100, height: 100 }}
           source={{
-            uri: props.imageURL,
+            uri: props.imageUrl,
           }}
         />
       </View>

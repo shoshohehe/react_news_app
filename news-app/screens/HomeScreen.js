@@ -4,7 +4,7 @@ import { ListItem } from "../components/ListItem";
 import Constants from "expo-constants";
 import axios from "axios";
 
-const URL = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${Constants.manifest.extra.newsApiKey}`;
+const URL = `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
 export const HomeScreen = ({ navigation }) => {
   const [articles, setArticles] = useState([]);
@@ -28,10 +28,14 @@ export const HomeScreen = ({ navigation }) => {
         data={articles}
         renderItem={({ item }) => (
           <ListItem
-            imageURL={item.urlToImage}
+            imageUrl={item.urlToImage}
             title={item.title}
             author={item.author}
-            onPress={() => navigation.navigate("Article")}
+            onPress={() =>
+              navigation.navigate("Article", {
+                article: item,
+              })
+            }
           />
         )}
         keyExtractor={(item, index) => index.toString()}
